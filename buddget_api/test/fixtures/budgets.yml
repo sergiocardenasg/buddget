@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  fund_amount: 
+  expenses: 
+
+two:
+  name: MyString
+  fund_amount: 
+  expenses: 
