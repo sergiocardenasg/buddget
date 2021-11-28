@@ -2,8 +2,8 @@ class CreateBudgets < ActiveRecord::Migration[6.1]
   def change
     create_table :budgets do |t|
       t.string :name
-      t.int :fund_amount
-      t.int :expenses
+      t.integer :fund_amount
+      t.integer :expenses
 
       t.timestamps
     end
