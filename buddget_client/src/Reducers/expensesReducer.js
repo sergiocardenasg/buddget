@@ -1,6 +1,6 @@
-export const budgetReducer = (state = [], action) => {
+export const expensesReducer = (state = [], action) => {
     switch(action.type) {
-        case 'FETCH_BUDGETS':
+        case 'FETCH_EXPENSES':
             return action.payload
         default:
             return state
