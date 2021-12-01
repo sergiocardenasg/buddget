@@ -37,4 +37,4 @@ class ExpenseForm extends Component {
     }
 }
 
-export default connect(null, { addBudget })(BudgetForm)
+export default connect(null, { addExpense })(ExpenseForm)

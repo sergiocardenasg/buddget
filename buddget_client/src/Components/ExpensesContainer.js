@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchExpenses } from '../Actions/expenseActions'
-import expenseForm from './expenseForm';
+import ExpenseForm from './ExpenseForm';
 import ExpenseList from './ExpenseList';
 
 class ExpensesContainer extends Component {
@@ -12,8 +12,8 @@ class ExpensesContainer extends Component {
     render() {
         return (
             <div>
-                <ExpenseList/>
                 <ExpenseForm/>
+                <ExpenseList/>
             </div>
         )
     }
