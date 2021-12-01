@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'
 import Home from './Home';
-import BudgetsContainer from './BudgetsContainer';
+import ExpenseList from './ExpenseList';
 import About from './About';
 
 export default function Router() {
@@ -9,7 +9,7 @@ export default function Router() {
         <div>
             <Routes>
                 <Route exact path='/' element={<Home/>} />
-                <Route exact path='/budgets' element={<BudgetsContainer/>} />
+                <Route exact path='/budgets' element={<ExpenseList/>} />
                 <Route exact path='/about' element={<About/>} />
             </Routes>
         </div>
