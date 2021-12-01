@@ -5,7 +5,7 @@ import { addBudget } from '../Actions/budgetActions'
 class BudgetForm extends Component {
     state = {
         name: '',
-        funds: 0,
+        fund_amount: 0,
     }
 
     handleChange = event => {
@@ -28,7 +28,7 @@ class BudgetForm extends Component {
                     <input type='text' value={this.state.name} onChange={this.handleChange} name='name'/>
                     <br/>
                     <label>What is Your Budget?</label>
-                    <input type='text' value={this.state.funds} onChange={this.handleChange} name='funds'/>
+                    <input type='text' value={this.state.fund_amount} onChange={this.handleChange} name='fund_amount'/>
                     <br/>
                     <input type='submit' value="Create Budget"/>
                 </form>
