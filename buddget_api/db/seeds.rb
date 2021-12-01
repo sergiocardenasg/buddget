@@ -8,4 +8,3 @@
 
 # Budget.create({name: "name", fund_amount: 100})
 
-Expense.create({name: "groceries", integer: 125, budget: 1})
