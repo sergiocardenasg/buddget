@@ -1,9 +1,10 @@
 import './App.css';
-import BudgetsContainer from './Components/BudgetsContainer.js'
+import Router from './Components/Router';
+
 function App() {
   return (
     <div>
-      <BudgetsContainer/>
+      <Router />
     </div>
   );
 }
