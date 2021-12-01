@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 2021_11_28_205007) do
   create_table "budgets", force: :cascade do |t|
     t.string "name"
     t.integer "fund_amount"
-    t.integer "expenses"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -23,8 +22,10 @@ ActiveRecord::Schema.define(version: 2021_11_28_205007) do
   create_table "expenses", force: :cascade do |t|
     t.string "name"
     t.integer "amount"
+    t.integer "budget_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["budget_id"], name: "index_expenses_on_budget_id"
   end
 
 end
