@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 function ExpenseList( {expenses} ) {
     return (
         <div>
-            {expenses.map(expense => <li key={expense.id}> {expense} </li>)}
+            {expenses.map(expense => <li key={expense.id}> {expense.name} - ${expense.amount}</li>)}
         </div>
     )
 }

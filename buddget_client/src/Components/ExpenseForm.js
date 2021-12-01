@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addBudget } from '../Actions/budgetActions'
+import { addExpense } from '../Actions/expenseActions'
 
-class BudgetForm extends Component {
+class ExpenseForm extends Component {
     state = {
         name: '',
-        funds: 0,
+        amount: 0
     }
 
     handleChange = event => {
@@ -17,20 +17,20 @@ class BudgetForm extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        this.props.addBudget(this.state)
+        this.props.addExpense(this.state)
     }
 
     render() {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Budget Name:</label>
+                    <label>Expense Name:</label>
                     <input type='text' value={this.state.name} onChange={this.handleChange} name='name'/>
                     <br/>
-                    <label>What is Your Budget?</label>
-                    <input type='text' value={this.state.funds} onChange={this.handleChange} name='funds'/>
+                    <label>Amount</label>
+                    <input type='text' value={this.state.amount} onChange={this.handleChange} name='amount'/>
                     <br/>
-                    <input type='submit' value="Create Budget"/>
+                    <input type='submit' value="Add Expense"/>
                 </form>
             </div>
         )

@@ -12,7 +12,6 @@ class BudgetsContainer extends Component {
     render() {
         return (
             <div>
-                <ExpenseList/>
                 <BudgetForm/>
             </div>
         )

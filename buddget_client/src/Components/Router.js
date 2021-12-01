@@ -9,7 +9,7 @@ export default function Router() {
         <div>
             <Routes>
                 <Route exact path='/' element={<Home/>} />
-                <Route exact path='/budgets' element={<ExpenseList/>} />
+                <Route exact path='/expenses' element={<ExpenseList/>} />
                 <Route exact path='/about' element={<About/>} />
             </Routes>
         </div>
