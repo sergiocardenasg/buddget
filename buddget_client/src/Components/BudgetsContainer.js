@@ -15,10 +15,14 @@ class BudgetsContainer extends Component {
                 <NavLink to="/newBudget"> Create a New Budget</NavLink>
                 <p></p>
                 <p></p>
-                <BudgetList />
+                <BudgetList budgets={this.props.budgets}/>
             </div>
         )
     }
 }
 
-export default connect(null, { fetchBudgets })(BudgetsContainer)
+const mapStateToProps = state => {
+    return { budgets: state.budgets }
+}
+
+export default connect(mapStateToProps, { fetchBudgets })(BudgetsContainer)
