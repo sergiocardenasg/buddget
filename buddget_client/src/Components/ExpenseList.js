@@ -1,17 +1,11 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React from "react";
 
-function ExpenseList( {expenses} ) {
-    return (
-        <div>
-            {expenses.map(expense => <li key={expense.id}> {expense.name} - ${expense.amount}</li>)}
-        </div>
-    )
-}
+const ExpenseList = ({ match, budgets }) => {
+  return (
+    <div>
+      <h3>{budgets[match.params.budgetId].name}</h3>
+    </div>
+  );
+};
 
-const mapStateToProps = state => {
-    return { expenses: state.expenses }
-}
-
-
-export default connect(mapStateToProps)(ExpenseList)
+export default ExpenseList;
