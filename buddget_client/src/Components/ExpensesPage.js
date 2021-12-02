@@ -5,7 +5,12 @@ import ExpenseList from "./ExpenseList";
 const ExpensesPage = ({ match, budgets }) => (
   <div>
     <Route
-      path={`${match.url}/:budgetId`}
+      exact
+      path={match.url}
+      render={() => <h3>Choose a budget</h3>}
+    />
+    <Route
+      path={`${match.url}/:budgets[budget].id`}
       render={(routerProps) => <ExpenseList {...routerProps} budgets={budgets} />}
     />
   </div>

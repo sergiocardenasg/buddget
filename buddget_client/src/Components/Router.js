@@ -1,28 +1,20 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import Home from './Home';
-import { connect } from 'react-redux'
 import About from './About';
 import BudgetsContainer from './BudgetsContainer';
-import ExpensesContainer from './ExpensesContainer';
-import BudgetForm from './BudgetForm';
+//import BudgetForm from './BudgetForm';
 
 function Router() {
     return (
         <div>
-            <Routes>
-                <Route exact path='/' element={<Home/>} />
-                <Route exact path='/about' element={<About/>} />
-                <Route path='/budgets' element={<BudgetsContainer/>} />
-                <Route path='/newBudget' element={<BudgetForm/>} />
-                <Route path='/expenses' element={<ExpensesContainer/>} />
-            </Routes>
+            <Switch>
+                <Route exact path='/' render={() => <Home/>} />
+                <Route exact path='/about' render={() => <About/>} />
+                <Route path='/budgets' render={(routerProps) => <BudgetsContainer/>} />
+            </Switch>
         </div>
     )
 }
 
-const mapStateToProps = state => {
-    return { budgets: state.budgets }
-}
-
-export default connect(mapStateToProps)(Router)
+export default Router

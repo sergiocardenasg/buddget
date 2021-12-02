@@ -19,4 +19,8 @@ class ExpensesContainer extends Component {
     }
 }
 
-export default connect(null, { fetchExpenses })(ExpensesContainer)
+const mapStateToProps = state => {
+    return { expenses: state.expenses }
+}
+
+export default connect(mapStateToProps, { fetchExpenses })(ExpensesContainer)
