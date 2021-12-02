@@ -22,12 +22,6 @@ const NavBar = () => {
       >
         Budgets
       </NavLink>
-      <NavLink 
-        style={{ marginRight: '10px' }} 
-        to="/expenses"
-      >
-        Expenses
-      </NavLink>
     </div>
   );
 }

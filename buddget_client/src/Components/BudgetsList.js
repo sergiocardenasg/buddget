@@ -1,18 +1,17 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { connect } from 'react-redux'
 
-const BudgetsList = ({ budgets }) => {
-    const renderBudgets = Object.keys(budgets).map((budgetID) => (
-        <ul>
-            <li>
-                <Link key={budgetID} to={`/budgets/${budgetID}`}>
-                {budgets[budgetID].name}
-                </Link>
-            </li>
-        </ul>
-      ));
-    
-      return <div>{renderBudgets}</div>;
-};
+function BudgetList( {budgets} ) {
+    return (
+        <div>
+            {budgets.map(budget => <li key={budget.id}> {budget.name} - ${budget.fund_amount}</li>)}
+        </div>
+    )
+}
 
-export default BudgetsList;
+const mapStateToProps = state => {
+    return { budgets: state.budgets }
+}
+
+
+export default connect(mapStateToProps)(BudgetList)

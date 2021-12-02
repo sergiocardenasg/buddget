@@ -18,7 +18,6 @@ class BudgetForm extends Component {
     handleSubmit = event => {
         event.preventDefault()
         this.props.addBudget(this.state)
-        this.props.history.push('/budgets')
     }
 
     render() {
