@@ -5,7 +5,7 @@ import { addBudget } from '../Actions/budgetActions'
 class BudgetForm extends Component {
     state = {
         name: '',
-        fund_amount: 0,
+        fund_amount: ''
     }
 
     handleChange = event => {

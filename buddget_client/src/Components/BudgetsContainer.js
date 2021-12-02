@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBudgets } from '../Actions/budgetActions'
-import BudgetForm from './BudgetForm';
 import BudgetList from './BudgetsList';
+import { NavLink } from 'react-router-dom';
 
 class BudgetsContainer extends Component {
     componentDidMount () {
@@ -12,8 +12,10 @@ class BudgetsContainer extends Component {
     render() {
         return (
             <div>
-                <BudgetForm/>
-                <BudgetList/>
+                <NavLink to="/newBudget"> Create a New Budget</NavLink>
+                <p></p>
+                <p></p>
+                <BudgetList />
             </div>
         )
     }
