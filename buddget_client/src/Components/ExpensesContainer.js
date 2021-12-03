@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchExpenses } from '../Actions/expenseActions'
+import {Route, Switch} from 'react-router-dom';
 import ExpenseForm from './ExpenseForm';
-import ExpenseList from './ExpenseList';
 
 class ExpensesContainer extends Component {
     componentDidMount () {
@@ -13,7 +13,6 @@ class ExpensesContainer extends Component {
         return (
             <div>
                 <ExpenseForm/>
-                <ExpenseList/>
             </div>
         )
     }

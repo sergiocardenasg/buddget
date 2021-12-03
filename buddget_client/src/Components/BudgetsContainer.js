@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBudgets } from '../Actions/budgetActions'
 import BudgetList from './BudgetsList';
-import {Route, Switch
-  } from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import BudgetForm from './BudgetForm'
 import Budget from './Budget'
 
