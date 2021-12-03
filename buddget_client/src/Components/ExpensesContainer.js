@@ -6,6 +6,7 @@ import ExpenseForm from './ExpenseForm';
 import ExpensesList from './ExpensesList';
 //import ExpensesList from './ExpensesList';
 //import { NavLink } from 'react-router-dom';
+import Expense from './Expense';
 
 class ExpensesContainer extends Component {
     componentDidMount () {
@@ -17,7 +18,8 @@ class ExpensesContainer extends Component {
             <div>
                 <Switch>
                     <Route exact path='/budgets/:id' render={(routerProps) => <ExpensesList {...routerProps} expenses={this.props.expenses} budgets={this.props.budgets}/>} />
-                    <Route path='/budgets/:id' render={(routerProps) => <ExpenseForm/>} />
+                    <Route path='/budgets/:id/expenses/new' render={(routerProps) => <ExpenseForm/>} />
+                    <Route exact path='/budgets/:id' render={(routerProps) => <Expense {...routerProps} expenses={this.props.expenses}/>} budgets={this.props.budgets} />
                 </Switch>
             </div>
         )
