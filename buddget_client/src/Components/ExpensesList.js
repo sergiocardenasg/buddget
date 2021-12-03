@@ -1,10 +1,11 @@
 import React from "react";
 
-const ExpensesList = ({ expenses, budgets }) => {
-  const renderExpenses = Object.keys(expenses).map((expense, budget) => (
+const ExpensesList = ({ match, budgets }) => {
+  let bdgt = budgets.find(budget => budget.id === parseInt(match.params.id))
+  const renderExpenses = (bdgt.expenses).map((expense) => (
     <ul>
         <li>
-            {expenses && expenses[expense].name} - ${expenses && expenses[expense].amount}
+            {expense.name} - ${expense.amount}
        </li>
     </ul>
   ));

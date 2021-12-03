@@ -1,6 +1,6 @@
 import React from "react";
 
-const Budget = ({ match, expenses, budgets }) => {
+const Expense = ({ match, expenses, budgets }) => {
   let bdgt = budgets.find(budget => budget.id === parseInt(match.params.id))
   let expnses = bdgt.expenses.map(expense => <li> {expense && expense.name} - ${expense && expense.amount} </li>)
   return (
@@ -10,4 +10,4 @@ const Budget = ({ match, expenses, budgets }) => {
   );
 };
 
-export default Budget;
+export default Expense;

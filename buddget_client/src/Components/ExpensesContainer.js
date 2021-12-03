@@ -4,9 +4,6 @@ import { fetchExpenses } from '../Actions/expenseActions'
 import {Route, Switch} from 'react-router-dom';
 import ExpenseForm from './ExpenseForm';
 import ExpensesList from './ExpensesList';
-//import ExpensesList from './ExpensesList';
-//import { NavLink } from 'react-router-dom';
-import Expense from './Expense';
 
 class ExpensesContainer extends Component {
     componentDidMount () {
@@ -17,17 +14,19 @@ class ExpensesContainer extends Component {
         return (
             <div>
                 <Switch>
-                    <Route exact path='/budgets/:id' render={(routerProps) => <ExpensesList {...routerProps} expenses={this.props.expenses} budgets={this.props.budgets}/>} />
                     <Route path='/budgets/:id/expenses/new' render={(routerProps) => <ExpenseForm/>} />
-                    <Route exact path='/budgets/:id' render={(routerProps) => <Expense {...routerProps} expenses={this.props.expenses}/>} budgets={this.props.budgets} />
+                    <Route exact path='/budgets/:id' render={(routerProps) => <ExpensesList {...routerProps} budgets={this.props.budgets}/>} />
                 </Switch>
             </div>
         )
     }
 }
 
+//<Route exact path='/budgets/:id' render={(routerProps) => <ExpensesList {...routerProps} expenses={this.props.expenses} budgets={this.props.budgets}/>} />
+
+
 const mapStateToProps = state => {
-    return { expenses: state.expenses, budgets: state.budgets  }
+    return { budgets: state.budgets  }
 }
 
 export default connect(mapStateToProps, { fetchExpenses })(ExpensesContainer)
