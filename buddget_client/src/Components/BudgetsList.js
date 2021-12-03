@@ -6,7 +6,7 @@ const BudgetsList = ({ budgets }) => {
     <ul>
         <li>
             <Link key={budgets[budget].id} to={`/budgets/${budgets[budget].id}`}>
-            {budgets[budget].name}
+              {budgets[budget].name}
             </Link>
         </li>
     </ul>
