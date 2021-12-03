@@ -5,12 +5,12 @@ class BudgetsController < ApplicationController
   def index
     @budgets = Budget.all
 
-    render json: @budgets
+    render json: @budgets, include: :expenses
   end
 
   # GET /budgets/1
   def show
-    render json: @budget
+    render json: @budget, include: :expenses
   end
 
   # POST /budgets

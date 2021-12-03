@@ -5,7 +5,7 @@ import BudgetList from './BudgetsList';
 import {Route, Switch
   } from 'react-router-dom';
 import BudgetForm from './BudgetForm'
-import ExpenseList from './ExpenseList'
+import Budget from './Budget'
 
 class BudgetsContainer extends Component {
     componentDidMount () {
@@ -18,7 +18,7 @@ class BudgetsContainer extends Component {
                 <Switch>
                     <Route exact path='/budgets' render={(routerProps) => <BudgetList budgets={this.props.budgets}/>} />
                     <Route exact path='/budgets/new' render={(routerProps) => <BudgetForm/>} />
-                    <Route exact path='/budgets/:id' render={(routerProps) => <ExpenseList {...routerProps} budgets={this.props.budgets}/>} />
+                    <Route exact path='/budgets/:id' render={(routerProps) => <Budget {...routerProps} budgets={this.props.budgets}/>} />
                 </Switch>
             </div>
     )}
