@@ -14,7 +14,6 @@ class ExpensesContainer extends Component {
         return (
             <div>
                 <Switch>
-                    <Route path='/budgets/:id/expenses/new' render={(routerProps) => <ExpenseForm/>} />
                     <Route exact path='/budgets/:id' render={(routerProps) => <ExpensesList {...routerProps} budgets={this.props.budgets}/>} />
                 </Switch>
             </div>
@@ -22,7 +21,7 @@ class ExpensesContainer extends Component {
     }
 }
 
-//<Route exact path='/budgets/:id' render={(routerProps) => <ExpensesList {...routerProps} expenses={this.props.expenses} budgets={this.props.budgets}/>} />
+//<Route path='/budgets/:id/expenses/new' render={(routerProps) => <ExpenseForm/>} />
 
 
 const mapStateToProps = state => {

@@ -1,4 +1,6 @@
 import React from "react";
+import { NavLink } from 'react-router-dom';
+import ExpenseForm from './ExpenseForm'
 
 const ExpensesList = ({ match, budgets }) => {
   let bdgt = budgets.find(budget => budget.id === parseInt(match.params.id))
@@ -10,7 +12,9 @@ const ExpensesList = ({ match, budgets }) => {
     </ul>
   ));
 
-  return <div>{renderExpenses}</div>;
+  return <div>{renderExpenses} 
+    <NavLink to={`/budgets/${match.params.id}/expenses/new`}> Add Expense to Budget </NavLink>
+  </div>;
 };
 
 export default ExpensesList;
