@@ -5,7 +5,7 @@ const BudgetsList = ({ budgets }) => {
   const renderBudgets = Object.keys(budgets).map((budget) => (
     <ul>
         <li>
-            <Link key={budget.id} to={`/budgets/${budgets[budget].id}`}>
+            <Link key={budgets[budget].id} to={`/budgets/${budgets[budget].id}`}>
             {budgets[budget].name}
             </Link>
         </li>
