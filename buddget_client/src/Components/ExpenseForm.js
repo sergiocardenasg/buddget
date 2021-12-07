@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addExpense } from '../Actions/expenseActions'
+import { Redirect } from 'react-router'
 
 class ExpenseForm extends Component {
     state = {
         name: '',
-        amount: ''
+        amount: '',
+        redirect: false
     }
 
     handleChange = event => {
@@ -18,9 +20,18 @@ class ExpenseForm extends Component {
     handleSubmit = event => {
         event.preventDefault()
         this.props.addExpense(this.state)
+        this.setState({
+            redirect: true
+        })
     }
 
     render() {
+        const { redirect } = this.state;
+        
+        if (redirect) {
+          return <Redirect to={`/budgets`}/>;
+        }
+
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
