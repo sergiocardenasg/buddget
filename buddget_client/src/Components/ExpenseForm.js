@@ -19,7 +19,7 @@ class ExpenseForm extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        this.props.addExpense(this.state)
+        this.props.addExpense(this.props.match.params.id, this.state)
         this.setState({
             redirect: true
         })

@@ -6,11 +6,11 @@ export const fetchExpenses = () => {
     }
 }
 
-export const addExpense = budget => {
+export const addExpense = ({ budget, expense }) => {
     return (dispatch) => {
-        fetch('http://127.0.0.1:3000/budgets/:id', {
+        fetch(`http://127.0.0.1:3000/budgets/${budget}`, {
             method: 'POST',
-            body: JSON.stringify(budget),
+            body: JSON.stringify(expense),
             headers: { 'Content-Type': 'application/json'}
         })
         .then(resp => resp.json())
