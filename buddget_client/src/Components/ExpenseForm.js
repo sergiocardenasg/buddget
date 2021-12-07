@@ -29,7 +29,7 @@ class ExpenseForm extends Component {
         const { redirect } = this.state;
         
         if (redirect) {
-          return <Redirect to={`/budgets`}/>;
+          return <Redirect to={`/budgets/${this.props.match.params.id}`}/>;
         }
 
         return (

@@ -8,7 +8,7 @@ export const fetchExpenses = () => {
 
 export const addExpense = budget => {
     return (dispatch) => {
-        fetch('http://127.0.0.1:3000/budges/:id/expenses', {
+        fetch('http://127.0.0.1:3000/budgets/:id', {
             method: 'POST',
             body: JSON.stringify(budget),
             headers: { 'Content-Type': 'application/json'}
