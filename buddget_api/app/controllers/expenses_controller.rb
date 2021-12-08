@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
 
   # GET /expenses
   def index
-    #@expenses = Expense.all
+    #ex@expenses = Expense.all
     @expenses = @budget.expenses
 
     render json: @expenses
@@ -19,7 +19,6 @@ class ExpensesController < ApplicationController
   def create
     # @expense = Expense.new(expense_params)
     @expense = @budget.expenses.build(expense_params)
-    # byebug
     # byebug
     if @expense.save
       render json: @expense, status: :created, location: @expense
