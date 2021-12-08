@@ -35,10 +35,10 @@ class ExpenseForm extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Expense Name:</label>
+                    <label>Expense Name: </label>
                     <input type='text' value={this.state.name} onChange={this.handleChange} name='name'/>
                     <br/>
-                    <label>Amount</label>
+                    <label>Amount: </label>
                     <input type='text' value={this.state.amount} onChange={this.handleChange} name='amount'/>
                     <br/>
                     <input type='submit' value="Add Expense"/>

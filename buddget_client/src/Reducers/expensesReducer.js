@@ -3,6 +3,7 @@ export const expensesReducer = (state = [], action) => {
         case 'FETCH_EXPENSES':
             return action.payload
         case 'ADD_EXPENSE':
+            // console.log(action, state)
             return [...state, action.payload]
         default:
             return state

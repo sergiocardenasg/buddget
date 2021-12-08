@@ -1,9 +1,11 @@
 class ExpensesController < ApplicationController
-  before_action :set_expense, only: [:show, :update, :destroy]
+  before_action :get_budget, only: [:show, :create, :update, :destroy]
+  #before_action :set_expense, only: [:show, :update, :destroy]
 
   # GET /expenses
   def index
-    @expenses = Expense.all
+    #@expenses = Expense.all
+    @expenses = @budget.expenses
 
     render json: @expenses
   end
@@ -15,8 +17,10 @@ class ExpensesController < ApplicationController
 
   # POST /expenses
   def create
-    @expense = Expense.new(expense_params)
-
+    # @expense = Expense.new(expense_params)
+    @expense = @budget.expenses.build(expense_params)
+    # byebug
+    # byebug
     if @expense.save
       render json: @expense, status: :created, location: @expense
     else
@@ -41,7 +45,12 @@ class ExpensesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_expense
-      @expense = Expense.find(params[:id])
+      @expense = @budget.expenses.find(params[:id])
+      # @expense = Expense.find(params[:id])
+    end
+
+    def get_budget
+      @budget = Budget.find(params[:budget_id])
     end
 
     # Only allow a list of trusted parameters through.
