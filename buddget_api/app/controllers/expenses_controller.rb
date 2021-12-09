@@ -1,5 +1,5 @@
 class ExpensesController < ApplicationController
-  before_action :get_budget, only: [:show, :create, :update, :destroy]
+  before_action :get_budget, only: [:index, :show, :create, :update, :destroy]
   #before_action :set_expense, only: [:show, :update, :destroy]
 
   # GET /expenses

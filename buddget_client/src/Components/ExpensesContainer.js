@@ -1,28 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchExpenses } from '../Actions/expenseActions'
-import { NavLink } from 'react-router-dom';
+import ExpensesList from './ExpensesList';
 
-const ExpensesList = ({ match, budgets }) => {
-  let bdgt = budgets.find(budget => budget.id === parseInt(match.params.id))
-  const renderExpenses = () => (bdgt.expenses).map((expense) => (
-    <ul>
-        <li>
-            {expense.name} - ${expense.amount}
-       </li>
-    </ul>
-  ));
+class ExpensesContainer extends Component {
 
-  
-  return <div>{!!bdgt ? renderExpenses() : null} 
-    <NavLink to={`/budgets/${match.params.id}/expenses/new`}> 
-      Add Expense to Budget
-    </NavLink>
-  </div>;
-};
+  render () {
+    return (
+      <div>
+        <ExpensesList budgets={this.props.budgets} match={this.props.match} />
+      </div>
+    )
+  }
+}
 
 const mapStateToProps = state => {
     return { budgets: state.budgets  }
 }
 
-export default connect(mapStateToProps, { fetchExpenses })(ExpensesList)
+export default connect(mapStateToProps)(ExpensesContainer)

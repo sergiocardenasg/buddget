@@ -17,3 +17,20 @@ export const addBudget = budget => {
         .then(budget => dispatch({ type: 'ADD_BUDGET', payload: budget}))
     }
 }
+
+export const addExpense = (budgetId, expense) => {
+    return (dispatch) => {
+        fetch(`http://127.0.0.1:3000/budgets/${budgetId}/expenses`, {
+            method: 'POST',
+            body: JSON.stringify(expense),
+            headers: { 'Content-Type': 'application/json'}
+        })
+        .then(resp => resp.json())
+        .then(expense => {
+                dispatch({ 
+                type: 'ADD_EXPENSE', 
+                payload: expense
+            })
+        })
+    }
+}
