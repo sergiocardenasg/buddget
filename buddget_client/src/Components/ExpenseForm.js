@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addExpense } from '../Actions/expenseActions'
+import { addExpense } from '../Actions/budgetActions'
 import { Redirect } from 'react-router'
 
 class ExpenseForm extends Component {

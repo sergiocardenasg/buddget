@@ -8,7 +8,7 @@ export const budgetReducer = (state = [], action) => {
         case 'ADD_BUDGET':
             return [...state, action.payload]
         case 'ADD_EXPENSE':
-            index = state.findIndex(budget => budget.budget === action.budgetId);
+            index = state.findIndex(budget => budget.id === action.payload.budget_id);
             budget = state[index];
       
             return [
