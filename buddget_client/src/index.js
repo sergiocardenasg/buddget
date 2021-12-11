@@ -9,6 +9,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { rootReducer } from './Reducers/rootReducer';
 import { BrowserRouter as Router } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap-theme.css'
 
 const store = createStore(
   rootReducer, 

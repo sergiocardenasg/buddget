@@ -1,12 +1,14 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
 
-const ExpensesList = ({ match, budgets }) => {
+const ExpensesList = ({ match, budgets, deleteExpense}) => {
   let bdgt = budgets.find(budget => budget.id === parseInt(match.params.id))
+
   const renderExpenses = () => (bdgt.expenses).map((expense) => (
     <ul>
         <li>
             {expense.name} - ${expense.amount}
+            {/* <button onClick={deleteExpense(expense.budget_id, expense.id)}> x </button> */}
        </li>
     </ul>
   ));
@@ -19,4 +21,4 @@ const ExpensesList = ({ match, budgets }) => {
   </div>;
 };
 
-export default ExpensesList;
+export default (ExpensesList)
