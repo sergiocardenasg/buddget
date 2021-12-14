@@ -37,15 +37,15 @@ export const addExpense = (budgetId, expense) => {
 
 export const deleteExpense = (budgetId, expenseId) => {
     return (dispatch) => {
-        fetch(`http://127.0.0.1:3000/budgets/${budgetId}/expenses`, {
+        fetch(`http://127.0.0.1:3000/budgets/${budgetId}/expenses/${expenseId}`, {
             method: 'DELETE',
-            body: JSON.stringify(expenseId),
         })
         .then(resp => resp.json())
-        .then(expenseId => {
+        .then(expense => {
+            // debugger
             dispatch({
                 type: "DELETE_EXPENSE",
-                payload: expenseId
+                payload: expense
              })
         })
     }

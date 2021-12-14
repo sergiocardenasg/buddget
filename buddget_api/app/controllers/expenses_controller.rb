@@ -38,7 +38,9 @@ class ExpensesController < ApplicationController
 
   # DELETE /expenses/1
   def destroy
+    @expense = @budget.expenses.find_by(params[:id])
     @expense.destroy
+    render json: @expense
   end
 
   private

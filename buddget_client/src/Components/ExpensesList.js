@@ -8,7 +8,7 @@ const ExpensesList = ({ match, budgets, deleteExp}) => {
     <ul>
         <li>
             {expense.name} - ${expense.amount}  
-            {/* <button onClick={deleteExp(expense.budget_id, expense.id)}> X </button> */}
+            <button onClick={() => deleteExp(expense.budget_id, expense.id)}> X </button>
        </li>
     </ul>
   ));
