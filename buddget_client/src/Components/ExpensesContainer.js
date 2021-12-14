@@ -8,7 +8,7 @@ class ExpensesContainer extends Component {
   render () {
     return (
       <div>
-        <ExpensesList budgets={this.props.budgets} match={this.props.match} deleteExpense={this.props.deleteExpense}/>
+        <ExpensesList budgets={this.props.budgets} match={this.props.match} deleteExp={this.props.deleteExpense}/>
       </div>
     )
   }

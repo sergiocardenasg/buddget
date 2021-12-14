@@ -20,7 +20,7 @@ export const budgetReducer = (state = [], action) => {
             budget = state[index];
             return [
               ...state.slice(0, index),
-              Object.assign({}, budget, { expenses: budget.expenses.filter(action.payload) }),
+              Object.assign({}, budget, { expenses: budget.expenses.filter(expense => expense.id !== action.id) }),
               ...state.slice(index + 1)
             ];
         default:
