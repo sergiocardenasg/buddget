@@ -7,7 +7,7 @@ const ExpensesList = ({ match, budgets, deleteExp}) => {
   const renderExpenses = () => (bdgt.expenses).map((expense) => (
     <ul>
         <li>
-            {expense.name} - ${expense.amount}  
+            {expense.name} - ${expense.amount} ({((expense.amount/bdgt.fund_amount)*100).toFixed(2)}% of budget total)
             <button onClick={() => deleteExp(expense.budget_id, expense.id)}> X </button>
        </li>
     </ul>
