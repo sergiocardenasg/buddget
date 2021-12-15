@@ -9,7 +9,8 @@ class BudgetForm extends Component {
         name: '',
         fund_amount: '',
         redirect: false,
-        formErrors: {fund_amount: ''},
+        formErrors: {name: '', fund_amount: ''},
+        nameValid: false,
         amountValid: false,
         formValid: false
     }
@@ -22,23 +23,29 @@ class BudgetForm extends Component {
 
     validateField(fieldName, value) {
         let fieldValidationErrors = this.state.formErrors;
+        let nameValid = this.state.nameValid;
         let amountValid = this.state.amountValid;
       
         switch(fieldName) {
-          case 'fund_amount':
+        case 'name':
+            nameValid = value.length >= 1;
+            fieldValidationErrors.name = nameValid ? '': ' cannot be blank';
+        break;
+        case 'fund_amount':
             amountValid = /^\d+$/.test(value);;
             fieldValidationErrors.fund_amount = amountValid ? '': ' contains non-numeric characters';
-            break;
-          default:
+        break;
+        default:
             break;
         }
         this.setState({formErrors: fieldValidationErrors,
+            nameValid: nameValid,
             amountValid: amountValid
             }, this.validateForm);
       }
       
       validateForm() {
-        this.setState({formValid: this.state.amountValid});
+        this.setState({formValid: this.state.nameValid && this.state.amountValid});
       }
 
     handleSubmit = event => {
