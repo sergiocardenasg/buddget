@@ -8,6 +8,7 @@ const ExpensesList = ({ match, budgets, deleteExp}) => {
     <ul>
         <li>
             {expense.name} - ${expense.amount} ({((expense.amount/bdgt.fund_amount)*100).toFixed(2)}% of budget total)
+            {"\n"}
             <button onClick={() => deleteExp(expense.budget_id, expense.id)}> X </button>
        </li>
     </ul>
