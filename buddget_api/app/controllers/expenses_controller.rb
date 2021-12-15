@@ -12,7 +12,8 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/1
   def show
-    render json: @expense
+    @expense = @budget.expenses.find(params[:id])
+    byebug
   end
 
   # POST /expenses
