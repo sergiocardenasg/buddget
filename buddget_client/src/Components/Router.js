@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 import Home from './Home';
-import About from './About';
+import More from './More';
 import BudgetsContainer from './BudgetsContainer';
 
 const Router = () => {
@@ -9,7 +9,7 @@ const Router = () => {
         <div>
             <Switch>
                 <Route exact path='/' render={() => <Home/>} />
-                <Route exact path='/about' render={() => <About/>} />
+                <Route exact path='/more' render={() => <More/>} />
                 <Route path='/budgets' render={(routerProps) => <BudgetsContainer/>} />
                 {/* <Route path={`/budgets/:id/expenses/new`} render={() => <ExpenseForm/>}/> */}
             </Switch>

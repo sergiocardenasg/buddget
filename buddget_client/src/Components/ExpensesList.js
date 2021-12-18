@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const ExpensesList = ({ match, budgets, deleteExp}) => {
   let bdgt = budgets.find(budget => budget.id === parseInt(match.params.id))
 
-  const renderExpenses = () => (bdgt.expenses).map((expense) => (
+  const renderExpenses = () => bdgt.expenses.map((expense) => (
     <ul>
         <li>
             {expense.name} - ${expense.amount} ({((expense.amount/bdgt.fund_amount)*100).toFixed(2)}% of budget total)

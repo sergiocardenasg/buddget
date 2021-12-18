@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function About() {
+export default function More() {
     return (
         <div>
             <h3>More resources:</h3>

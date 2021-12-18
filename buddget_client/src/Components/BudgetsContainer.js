@@ -20,6 +20,7 @@ class BudgetsContainer extends Component {
                     <Route exact path='/budgets/new' render={(routerProps) => <BudgetForm/>} />
                     <Route exact path='/budgets/:id' render={(routerProps) => <Budget {...routerProps} budgets={this.props.budgets}/>} />
                     <Route exact path='/budgets/:id/expenses/new' render={(routerProps) => <ExpenseForm {...routerProps}/>} />
+                    {/* <Route exact path='/budgets/:id/expenses/:id' render={(routerProps) => <Expense {...routerProps} budgets={this.props.budgets}/>} /> */}
                 </Switch>
             </div>
     )}

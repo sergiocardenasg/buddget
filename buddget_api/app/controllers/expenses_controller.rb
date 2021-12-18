@@ -13,7 +13,6 @@ class ExpensesController < ApplicationController
   # GET /expenses/1
   def show
     @expense = @budget.expenses.find(params[:id])
-    byebug
   end
 
   # POST /expenses
@@ -41,7 +40,7 @@ class ExpensesController < ApplicationController
   def destroy
     @expense = @budget.expenses.find_by(params[:id])
     @expense.destroy
-    render json: @expense
+    # render json: @expense
   end
 
   private

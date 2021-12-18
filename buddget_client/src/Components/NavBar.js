@@ -12,12 +12,6 @@ const NavBar = () => {
       </NavLink>
       <NavLink 
         style={{ marginRight: '10px' }} 
-        to="/about"
-      >
-        About
-      </NavLink>
-      <NavLink 
-        style={{ marginRight: '10px' }} 
         to="/budgets"
       >
         Budgets
@@ -27,6 +21,12 @@ const NavBar = () => {
         to="/budgets/new"
       >
         Create New Budget
+      </NavLink>
+      <NavLink 
+        style={{ marginRight: '10px' }} 
+        to="/more"
+      >
+        More Resources
       </NavLink>
     </div>
   );

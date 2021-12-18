@@ -43,7 +43,7 @@ export const deleteExpense = (budgetId, expense) => {
         .then(expense => expense.json())
         .then(expense => {
             dispatch({
-                type: "DELETE_EXPENSE",
+                type: 'DELETE_EXPENSE',
                 payload: expense
              })
         })
