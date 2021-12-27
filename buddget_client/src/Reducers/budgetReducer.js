@@ -15,6 +15,7 @@ export const budgetReducer = (state = [], action) => {
               Object.assign({}, budget, { expenses: budget.expenses.concat(action.payload) }),
               ...state.slice(index + 1)
             ];
+        // homework - investigate how to delete an expense without refreshing
         case 'DELETE_EXPENSE':
             index = state.findIndex(budget => budget.id === action.payload.budget_id);
             budget = state[index];

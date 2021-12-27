@@ -38,8 +38,10 @@ class ExpensesController < ApplicationController
 
   # DELETE /expenses/1
   def destroy
-    @expense = @budget.expenses.find_by(params[:id])
+    # byebug
+    @expense = @budget.expenses.find_by(id: params[:id])
     @expense.destroy
+    # redirect_to item_index_path
     # render json: @expense
   end
 
