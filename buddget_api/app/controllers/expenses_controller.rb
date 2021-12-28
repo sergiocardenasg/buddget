@@ -40,9 +40,10 @@ class ExpensesController < ApplicationController
   def destroy
     # byebug
     @expense = @budget.expenses.find_by(id: params[:id])
+    @id = @expense.id
     @expense.destroy
-    # redirect_to item_index_path
-    # render json: @expense
+    # redirect_to action: "index"
+    render json: { budget_id: @budget.id, expense_id: @id }
   end
 
   private
